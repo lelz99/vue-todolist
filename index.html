@@ -20,9 +20,14 @@
     <!-- Javscript -->
     <script src="js/data.js"></script>
     <script defer src="js/script.js"></script>
-    
+
 </head>
 <body>
-    <div id="root"></div>
+    <div id="root" class="my-container">
+        <h1 class="text-center my-5">Cose da fare</h1>
+        <ul class="list-group">
+            <li v-for="task in tasks" class="list-group-item" :class="task.done ? 'text-decoration-line-through' : '' ">{{task.text}}</li>
+        </ul>
+    </div>
 </body>
 </html>
