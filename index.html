@@ -27,7 +27,7 @@
         <div class="card mt-5">
             <h1 class="text-center">Cose da fare</h1>
             <ul class="list-group border-top-0">
-                <li v-for="task in tasks" class="list-group-item d-flex justify-content-between border-start-0 border-end-0" :class="task.done ? 'text-decoration-line-through' : '' ">
+                <li  v-if="tasks.length" v-for="task in tasks" class="list-group-item d-flex justify-content-between border-start-0 border-end-0" :class="task.done ? 'text-decoration-line-through' : '' ">
                     <div>
                     <input v-model="task.done" class="me-2" role="button" type="checkbox">
                         {{task.text}}
@@ -41,6 +41,7 @@
                     </div>
                 </li>
             </ul>
+            <h1 v-show="!tasks.length" class="border-0 mx-auto">Non ci sono task </h1>
         </div>
 
         <ul class="mt-3 p-0 list-unstyled d-flex justify-content-between my-container">
