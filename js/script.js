@@ -5,6 +5,13 @@ const app = createApp({
             tasks,
         }
     },
+    methods: {
+        deleteTask(id){
+            const newTasks = this.tasks.filter( task => id !== task.id)
+            this.tasks = newTasks
+        }
+    }
 });
-console.log(tasks)
+
 app.mount('#root')
+console.log(tasks)

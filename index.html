@@ -28,10 +28,10 @@
         <ul class="list-group">
             <li v-for="task in tasks" class="list-group-item d-flex justify-content-between" :class="task.done ? 'text-decoration-line-through' : '' ">
                 <div>
-                    <input v-model="task.done" class="me-2" role="button" type="checkbox">
+                <input v-model="task.done" class="me-2" role="button" type="checkbox">
                     {{task.text}}
                 </div>
-                <div><i role="button" class="fa-solid fa-xmark"></i></div>
+                <div><i @click="deleteTask(task.id)" role="button" class="fa-solid fa-xmark"></i></div>
             </li>
         </ul>
     </div>
