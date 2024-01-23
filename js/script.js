@@ -6,4 +6,5 @@ const app = createApp({
         }
     },
 });
+console.log(tasks)
 app.mount('#root')

@@ -26,7 +26,13 @@
     <div id="root" class="my-container">
         <h1 class="text-center my-5">Cose da fare</h1>
         <ul class="list-group">
-            <li v-for="task in tasks" class="list-group-item" :class="task.done ? 'text-decoration-line-through' : '' ">{{task.text}}</li>
+            <li v-for="task in tasks" class="list-group-item d-flex justify-content-between" :class="task.done ? 'text-decoration-line-through' : '' ">
+                <div>
+                    <input v-model="task.done" class="me-2" role="button" type="checkbox">
+                    {{task.text}}
+                </div>
+                <div><i role="button" class="fa-solid fa-xmark"></i></div>
+            </li>
         </ul>
     </div>
 </body>
