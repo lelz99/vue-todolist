@@ -33,6 +33,12 @@
                 </div>
                 <div><i @click="deleteTask(task.id)" role="button" class="fa-solid fa-xmark"></i></div>
             </li>
+            <li class="list-unstyled">
+                <div class="input-group">
+                    <input v-model.trim="newTaskText" @keyup.enter="addNewTask" type="text" class="form-control" placeholder="Inserisci una nuova cosa da fare">
+                    <button @click="addNewTask" class="btn btn-outline-secondary"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </li>
         </ul>
     </div>
 </body>
