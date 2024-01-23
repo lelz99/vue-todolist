@@ -13,7 +13,7 @@ const app = createApp({
         },
         addNewTask(){
             const newTask = {
-                id: new Date().toISOString(),
+                id: 5,
                 done: false,
                 text: this.newTaskText,
             }
@@ -21,8 +21,17 @@ const app = createApp({
             this.tasks.push(newTask)
 
             this.newTaskText = ''
+        },
+        checkAll(value){
+            this.tasks.forEach(task => {
+                task.done = value
+            })        
+        },
+        deleteAllCheck(){
+            this.tasks = []
         }
     }
 });
 
 app.mount('#root')
+console.log(tasks)
